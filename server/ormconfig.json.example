@@ -1,0 +1,10 @@
+[
+  {"name": "default",
+    "type": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "useUnifiedTopology": true,
+    "database": YOUR_DATABASE_NAME,
+    "entities": ["./src/schemas/*.ts"]
+  }
+]
