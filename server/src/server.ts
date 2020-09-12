@@ -1,12 +1,16 @@
 import 'express-async-errors';
 import { errors } from 'celebrate';
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
+
 import AppError from './errors/AppError';
 import routes from './routes';
 
 import './database';
 
 const server = express();
+server.use(cors());
+
 server.use(express.json());
 server.use(routes);
 
