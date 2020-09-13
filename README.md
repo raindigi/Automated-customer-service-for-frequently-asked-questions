@@ -11,7 +11,7 @@ Um simples projeto de automação para perguntas frequentes.
 - Instale o [Yarn](https://classic.yarnpkg.com/pt-BR/)
 
 - Clone esse repositório
-<pre>git clone https://github.com/MiguelBragaGarcia/-generic-video-sharing-platform.git</pre>
+<pre>git clone https://github.com/MiguelBragaGarcia/Automated-customer-service-for-frequently-asked-questions.git</pre>
 
 - **Siga as demais instruções respectiva a cada pasta da aplicação**
 
