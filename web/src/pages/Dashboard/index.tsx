@@ -1,4 +1,4 @@
-import React, { useState, useCallback, KeyboardEventHandler } from 'react';
+import React, { useState, useCallback } from 'react';
 
 import { MdSend, MdClose } from 'react-icons/md';
 import { FaRobot } from 'react-icons/fa';
@@ -46,6 +46,12 @@ const Dashborad: React.FC = () => {
     }
   }, [inputQuestion, messages]);
 
+  const handlekeyPress = useCallback(async (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      await handleSubmit();
+    }
+  }, [handleSubmit]);
+
   return (
     <Container>
       {toggleChat ? (
@@ -66,15 +72,15 @@ const Dashborad: React.FC = () => {
           <ChatArea>
 
             {messages?.map((message) => (
-              <>
-                <p key={message.id}>{message.question}</p>
-                <p key={message.id}>{message.answer}</p>
-              </>
+              <div key={message.id}>
+                <p>{message.question}</p>
+                <p>{message.answer}</p>
+              </div>
             ))}
 
           </ChatArea>
           <ChatActions>
-            <input type="text" placeholder="Digite sua pergunta" onChange={(e) => setInputQuestion(e.target.value)} value={inputQuestion} />
+            <input type="text" placeholder="Digite sua pergunta" onChange={(e) => setInputQuestion(e.target.value)} value={inputQuestion} onKeyPress={(e) => handlekeyPress(e)} />
             <button type="button" onClick={handleSubmit}>
               <MdSend size={24} />
             </button>
